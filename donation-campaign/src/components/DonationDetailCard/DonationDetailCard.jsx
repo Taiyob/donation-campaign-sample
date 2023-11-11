@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import swal from 'sweetalert';
 
 const DonationDetailCard = ({showDonationDetails}) => {
     const {id,category,image,title,description,price} = showDonationDetails;
@@ -8,13 +9,15 @@ const DonationDetailCard = ({showDonationDetails}) => {
         if(!getDonate){
           addDonate.push(showDonationDetails);
           localStorage.setItem("donate", JSON.stringify(addDonate));
+          swal("Good job!", "Your Donation Submitted!", "success");
         }else{
           const isExist = getDonate.find(donates=>donates.id === id);
           if(!isExist){
             addDonate.push(...getDonate, showDonationDetails);
             localStorage.setItem("donate", JSON.stringify(addDonate));
+            swal("Good job!", "Your Donation Submitted!", "success");
           }else{
-            console.log('error');
+            swal("DUPLICATE!", "You do not try to double!", "error");
           }
         }
     }
