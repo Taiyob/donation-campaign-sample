@@ -59,7 +59,7 @@ const Navbar = () => {
         <div className="form-control ">
             <label className="input-group">
               <input type="text" placeholder="Search Here" className="input input-bordered" />
-              <span className='bg-orange-800 text-white font-semibold'>Search</span>
+              <span className='bg-orange-950 text-white font-semibold'>Search</span>
             </label>
         </div>
       </div>
